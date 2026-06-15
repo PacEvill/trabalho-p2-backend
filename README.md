@@ -106,6 +106,36 @@ Se você preferir executar os testes em um ambiente Docker isolado sem instalar 
 docker compose run --rm web pytest -v
 ```
 
+### Opção C: Execução Automática via GitHub Actions (CI/CD)
+
+O projeto está configurado com um pipeline de integração contínua (CI) no arquivo [.github/workflows/tests.yml](file:///.github/workflows/tests.yml). 
+
+Toda vez que você enviar novos commits para o GitHub:
+1. Os testes serão executados de forma totalmente automatizada em um container limpo.
+2. O status da execução (sucesso/falha) será exibido diretamente na aba **Actions** do seu repositório GitHub e ao lado dos seus commits.
+
+---
+
+## 🐙 Como Enviar o Projeto para o GitHub
+
+Caso ainda não tenha enviado o projeto para o seu repositório no GitHub, siga estes comandos no terminal local:
+
+1. **Crie um repositório vazio no GitHub** (não adicione README, gitignore ou licença, pois o projeto já possui esses arquivos).
+2. **Adicione o endereço remoto do repositório** criado (substitua `seu-usuario` e `nome-do-repositorio`):
+   ```bash
+   git remote add origin https://github.com/seu-usuario/nome-do-repositorio.git
+   ```
+3. **Adicione e comente as novas alterações** (incluindo o pipeline de testes):
+   ```bash
+   git add .
+   git commit -m "feat: adiciona pipeline de CI do GitHub Actions"
+   ```
+4. **Envie os arquivos para o GitHub**:
+   ```bash
+   git branch -M main
+   git push -u origin main
+   ```
+
 ---
 
 ## 📌 Rotas da API REST
