@@ -1,0 +1,19 @@
+# Python caches e compilados
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ambientes virtuais locais
+.venv/
+venv/
+ENV/
+env/
+
+# Configurações locais
+.env
+
+# Testes e relatórios
+.pytest_cache/
+test.db
+test.db-journal
